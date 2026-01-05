@@ -14,7 +14,7 @@ export function Header() {
           <div className="flex items-center justify-between">
             {/* Logo do Projeto */}
             <div className="flex items-center gap-2">
-              <span className="text-xl font-bold text-slate-300">
+              <span className="text-xl font-bold text-slate-300 cursor-pointer">
                 Power Meter Ótico
               </span>
             </div>
@@ -29,10 +29,10 @@ export function Header() {
                       text-left cursor-pointer
                       text-slate-300
                       bg-transparent
-                      hover:bg-transparent
                       focus:bg-transparent
                       data-active:bg-transparent
                       hover:text-slate-100
+                      hover:bg-zinc-800
                       transition-colors
                     "
                   >
@@ -56,7 +56,7 @@ export function Header() {
                       text-left cursor-pointer
                       text-slate-300
                       bg-transparent
-                      hover:bg-transparent
+                      hover:bg-zinc-800
                       focus:bg-transparent
                       data-active:bg-transparent
                       hover:text-slate-100
@@ -83,7 +83,7 @@ export function Header() {
                       text-left cursor-pointer
                       text-slate-300
                       bg-transparent
-                      hover:bg-transparent
+                      hover:bg-zinc-800
                       focus:bg-transparent
                       data-active:bg-transparent
                       hover:text-slate-100
@@ -110,7 +110,7 @@ export function Header() {
                       text-left cursor-pointer
                       text-slate-300
                       bg-transparent
-                      hover:bg-transparent
+                      hover:bg-zinc-800
                       focus:bg-transparent
                       data-active:bg-transparent
                       hover:text-slate-100
