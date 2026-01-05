@@ -37,10 +37,10 @@ export function Header() {
           {/* Navbar */}
           {isLoading ? (
             <div className="ml-auto flex gap-2">
-              <Skeleton className="h-10 w-36 bg-zinc-800" />
-              <Skeleton className="h-10 w-40 bg-zinc-800" />
-              <Skeleton className="h-10 w-32 bg-zinc-800" />
-              <Skeleton className="h-10 w-24 bg-zinc-800" />
+              <Skeleton className="h-9 w-36 bg-zinc-800" />
+              <Skeleton className="h-9 w-39 bg-zinc-800" />
+              <Skeleton className="h-9 w-28 bg-zinc-800" />
+              <Skeleton className="h-9 w-22 bg-zinc-800" />
             </div>
           ) : (
             <NavigationMenu className="ml-auto">
