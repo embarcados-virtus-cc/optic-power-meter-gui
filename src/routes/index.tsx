@@ -1,39 +1,39 @@
 import { createFileRoute } from '@tanstack/react-router'
-import logo from '../logo.svg'
+import { useStore } from '@tanstack/react-store'
+import { RxPower } from '@/components/dashboard/RxPower'
+import { Info } from '@/components/dashboard/Info'
+import { Parameters } from '@/components/dashboard/Parameters'
+import { History } from '@/components/dashboard/History'
+import { loadingStore } from '@/stores/loadingStore'
 
 export const Route = createFileRoute('/')({
   component: App,
 })
 
 function App() {
+  const isLoading = useStore(loadingStore)
+
   return (
-    <div className="text-center">
-      <header className="min-h-screen flex flex-col items-center justify-center bg-[#282c34] text-white text-[calc(10px+2vmin)]">
-        <img
-          src={logo}
-          className="h-[40vmin] pointer-events-none animate-[spin_20s_linear_infinite]"
-          alt="logo"
-        />
-        <p>
-          Edit <code>src/routes/index.tsx</code> and save to reload.
-        </p>
-        <a
-          className="text-[#61dafb] hover:underline"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <a
-          className="text-[#61dafb] hover:underline"
-          href="https://tanstack.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn TanStack
-        </a>
-      </header>
+    <div className="min-h-max bg-zinc-950">
+      <main className="container mx-auto p-6">
+        <div className="space-y-6">
+          {/* Primeira Linha: RxPower + Parameters */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <RxPower isLoading={isLoading} />
+            <Parameters isLoading={isLoading} />
+          </div>
+
+          {/* Segunda Linha: History + Info */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+            <div className="lg:col-span-8">
+              <History isLoading={isLoading} />
+            </div>
+            <div className="lg:col-span-4">
+              <Info isLoading={isLoading} />
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
   )
 }

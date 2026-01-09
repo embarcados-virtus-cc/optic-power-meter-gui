@@ -1,11 +1,17 @@
 import { Outlet, createRootRoute } from '@tanstack/react-router'
-import { Header } from '../components/Header'
+import { Header } from '@/components/layout/Header'
+import { Footer } from '@/components/layout/Footer'
 
 export const Route = createRootRoute({
   component: () => (
     <>
       <Header />
-      <Outlet />
+      <div className="pt-[8%] bg-zinc-950">
+        <Outlet />
+      </div>
+      <div className="pt-[8%] bg-zinc-950">
+        <Footer />
+      </div>
     </>
   ),
 })

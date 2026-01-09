@@ -1,0 +1,192 @@
+import { useEffect, useState } from 'react'
+import { Activity, AlarmClock, Toolbox, Users } from 'lucide-react'
+import { Link } from '@tanstack/react-router'
+
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from '@/components/ui/navigation-menu'
+import { Skeleton } from '@/components/ui/skeleton'
+
+export function Header() {
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 500)
+
+    return () => clearTimeout(timer)
+  }, [])
+
+  return (
+    <header className="p-5 flex items-center bg-zinc-950 shadow-lg border-zinc-800 border-b-[0.5px]">
+      <div className="container mx-auto">
+        <div className="flex items-center justify-between">
+          {/* Logo do Projeto (alinhado a esquerda) */}
+          <div className="flex items-center gap-2">
+            {isLoading ? (
+              <Skeleton className="h-12 w-95 bg-zinc-800" />
+            ) : (
+              <span className="text-xl font-bold text-slate-300 cursor-pointer flex items-center">
+                <img
+                  src="/logo-power-meter.png"
+                  alt="Logo"
+                  className="h-12 w-12 mr-4"
+                />
+                MEDIDOR DE POTÊNCIA ÓPTICA
+              </span>
+            )}
+          </div>
+
+          {/* Navbar Completa (alinhada a direita) */}
+          {isLoading ? (
+            // Skeleton da Navbar
+            <div className="ml-auto flex gap-2">
+              <Skeleton className="h-9 w-36 bg-zinc-800" />
+              <Skeleton className="h-9 w-39 bg-zinc-800" />
+              <Skeleton className="h-9 w-28 bg-zinc-800" />
+              <Skeleton className="h-9 w-22 bg-zinc-800" />
+            </div>
+          ) : (
+            <NavigationMenu className="ml-auto">
+              <NavigationMenuList className="gap-2">
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    className="
+                      group
+                      text-left cursor-pointer
+                      text-slate-300
+                      bg-transparent
+                      focus:bg-transparent
+                      data-active:bg-transparent
+                      hover:text-slate-100
+                      hover:bg-zinc-800
+                      transition-colors
+                      px-3 py-2 rounded-md
+                    "
+                  >
+                    <Link
+                      to="/"
+                      className="flex flex-row item-scenter justify-start gap-2"
+                    >
+                      <Activity
+                        className="
+                            text-slate-300
+                            group-hover:text-slate-100
+                            transition-colors
+                          "
+                        size={20}
+                      />
+                      Monitoramento
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    className="
+                      group
+                      text-left cursor-pointer
+                      text-slate-300
+                      bg-transparent
+                      hover:bg-zinc-800
+                      focus:bg-transparent
+                      data-active:bg-transparent
+                      hover:text-slate-100
+                      transition-colors
+                      px-3 py-2 rounded-md
+                    "
+                  >
+                    <Link
+                      to="/alarms"
+                      className="flex flex-row item-scenter justify-start gap-2"
+                    >
+                      <AlarmClock
+                        className="
+                            text-slate-300
+                            group-hover:text-slate-100
+                            transition-colors
+                          "
+                        size={20}
+                      />
+                      Alarmes e Avisos
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    className="
+                      group
+                      text-left cursor-pointer
+                      text-slate-300
+                      bg-transparent
+                      hover:bg-zinc-800
+                      focus:bg-transparent
+                      data-active:bg-transparent
+                      hover:text-slate-100
+                      transition-colors
+                      px-3 py-2 rounded-md
+                    "
+                  >
+                    <Link
+                      to="/tuning"
+                      className="flex flex-row items-center justify-start gap-2"
+                    >
+                      <Toolbox
+                        className="
+                            text-slate-300
+                            group-hover:text-slate-100
+                            transition-colors
+                          "
+                        size={20}
+                      />
+                      Calibração
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    className="
+                      group
+                      text-left cursor-pointer
+                      text-slate-300
+                      bg-transparent
+                      hover:bg-zinc-800
+                      focus:bg-transparent
+                      data-active:bg-transparent
+                      hover:text-slate-100
+                      transition-colors
+                      px-3 py-2 rounded-md
+                    "
+                  >
+                    <Link
+                      to="/about"
+                      className="flex flex-row items-center justify-start gap-2"
+                    >
+                      <Users
+                        className="
+                            text-slate-300
+                            group-hover:text-slate-100
+                            transition-colors
+                          "
+                        size={20}
+                      />
+                      Sobre
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+          )}
+        </div>
+      </div>
+    </header>
+  )
+}
+
+export default Header
