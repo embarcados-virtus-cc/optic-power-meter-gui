@@ -22,18 +22,20 @@ export function Footer() {
           // Skeleton do Footer
           <div className="flex flex-col gap-4">
             <div className="flex items-center justify-between">
-              <Skeleton className="h-6 w-48 bg-zinc-800" />
+              <div className="flex items-center gap-4">
+                <div>
+                  <Skeleton className="h-20 w-20 bg-zinc-800" />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <Skeleton className="h-6 w-70 bg-zinc-800" />
+                  <Skeleton className="h-6 w-90 bg-zinc-800" />
+                </div>
+              </div>
               <div className="flex gap-3">
-                <Skeleton className="h-9 w-9 rounded-md bg-zinc-800" />
-                <Skeleton className="h-9 w-9 rounded-md bg-zinc-800" />
                 <Skeleton className="h-9 w-9 rounded-md bg-zinc-800" />
               </div>
             </div>
             <Separator className="bg-zinc-800" />
-            <div className="flex items-center justify-between">
-              <Skeleton className="h-4 w-64 bg-zinc-800" />
-              <Skeleton className="h-4 w-40 bg-zinc-800" />
-            </div>
           </div>
         ) : (
           <div className="flex flex-col gap-4">

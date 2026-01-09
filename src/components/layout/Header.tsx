@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Activity, AlarmClock, Toolbox, Users } from 'lucide-react'
+import { Link } from '@tanstack/react-router'
+
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -26,7 +28,7 @@ export function Header() {
           {/* Logo do Projeto (alinhado a esquerda) */}
           <div className="flex items-center gap-2">
             {isLoading ? (
-              <Skeleton className="h-7 w-48 bg-zinc-800" />
+              <Skeleton className="h-12 w-95 bg-zinc-800" />
             ) : (
               <span className="text-xl font-bold text-slate-300 cursor-pointer flex items-center">
                 <img
@@ -55,7 +57,6 @@ export function Header() {
                   <NavigationMenuLink
                     className="
                       group
-                      flex flex-row items-center justify-start gap-2
                       text-left cursor-pointer
                       text-slate-300
                       bg-transparent
@@ -67,15 +68,20 @@ export function Header() {
                       px-3 py-2 rounded-md
                     "
                   >
-                    <Activity
-                      className="
-                          text-slate-300
-                          group-hover:text-slate-100
-                          transition-colors
-                        "
-                      size={20}
-                    />
-                    Monitoramento
+                    <Link
+                      to="/"
+                      className="flex flex-row item-scenter justify-start gap-2"
+                    >
+                      <Activity
+                        className="
+                            text-slate-300
+                            group-hover:text-slate-100
+                            transition-colors
+                          "
+                        size={20}
+                      />
+                      Monitoramento
+                    </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 
@@ -83,7 +89,6 @@ export function Header() {
                   <NavigationMenuLink
                     className="
                       group
-                      flex flex-row items-center justify-start gap-2
                       text-left cursor-pointer
                       text-slate-300
                       bg-transparent
@@ -95,15 +100,20 @@ export function Header() {
                       px-3 py-2 rounded-md
                     "
                   >
-                    <AlarmClock
-                      className="
-                          text-slate-300
-                          group-hover:text-slate-100
-                          transition-colors
-                        "
-                      size={20}
-                    />
-                    Alarmes e Avisos
+                    <Link
+                      to="/alarms"
+                      className="flex flex-row item-scenter justify-start gap-2"
+                    >
+                      <AlarmClock
+                        className="
+                            text-slate-300
+                            group-hover:text-slate-100
+                            transition-colors
+                          "
+                        size={20}
+                      />
+                      Alarmes e Avisos
+                    </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 
@@ -111,7 +121,6 @@ export function Header() {
                   <NavigationMenuLink
                     className="
                       group
-                      flex flex-row items-center justify-start gap-2
                       text-left cursor-pointer
                       text-slate-300
                       bg-transparent
@@ -123,15 +132,20 @@ export function Header() {
                       px-3 py-2 rounded-md
                     "
                   >
-                    <Toolbox
-                      className="
-                          text-slate-300
-                          group-hover:text-slate-100
-                          transition-colors
-                        "
-                      size={20}
-                    />
-                    Calibração
+                    <Link
+                      to="/tuning"
+                      className="flex flex-row items-center justify-start gap-2"
+                    >
+                      <Toolbox
+                        className="
+                            text-slate-300
+                            group-hover:text-slate-100
+                            transition-colors
+                          "
+                        size={20}
+                      />
+                      Calibração
+                    </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 
@@ -139,7 +153,6 @@ export function Header() {
                   <NavigationMenuLink
                     className="
                       group
-                      flex flex-row items-center justify-start gap-2
                       text-left cursor-pointer
                       text-slate-300
                       bg-transparent
@@ -151,15 +164,20 @@ export function Header() {
                       px-3 py-2 rounded-md
                     "
                   >
-                    <Users
-                      className="
-                          text-slate-300
-                          group-hover:text-slate-100
-                          transition-colors
-                        "
-                      size={20}
-                    />
-                    Sobre
+                    <Link
+                      to="/about"
+                      className="flex flex-row items-center justify-start gap-2"
+                    >
+                      <Users
+                        className="
+                            text-slate-300
+                            group-hover:text-slate-100
+                            transition-colors
+                          "
+                        size={20}
+                      />
+                      Sobre
+                    </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
               </NavigationMenuList>
