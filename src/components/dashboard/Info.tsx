@@ -31,7 +31,7 @@ export function Info({ isLoading }: { isLoading: boolean }) {
           </Label>
         </div>
       </CardHeaderComponent>
-      <CardContentComponent className="min-h-65 flex-1 flex flex-col">
+      <CardContentComponent className="min-h-59 2xl:min-h-66 flex-1 flex flex-col">
         {isLoading ? (
           <div className="space-y-4 flex-1">
             {/* Primeira Seção */}
