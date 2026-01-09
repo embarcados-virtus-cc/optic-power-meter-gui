@@ -14,21 +14,17 @@ function App() {
   const isLoading = useStore(loadingStore)
 
   return (
-    <div className="min-h-screen bg-zinc-950">
+    <div className="min-h-max bg-zinc-950">
       <main className="container mx-auto p-6">
         <div className="space-y-6">
           {/* Primeira Linha: RxPower + Parameters */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-            <div className="lg:col-span-4">
-              <RxPower isLoading={isLoading} />
-            </div>
-            <div className="lg:col-span-8">
-              <Parameters isLoading={isLoading} />
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <RxPower isLoading={isLoading} />
+            <Parameters isLoading={isLoading} />
           </div>
 
           {/* Segunda Linha: History + Info */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
             <div className="lg:col-span-8">
               <History isLoading={isLoading} />
             </div>
