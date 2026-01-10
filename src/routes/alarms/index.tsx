@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { loadingStore } from '@/stores/loadingStore'
 import { useStore } from '@tanstack/react-store'
+import { loadingStore } from '@/stores/loadingStore'
 
 export const Route = createFileRoute('/alarms/')({
   component: RouteComponent,

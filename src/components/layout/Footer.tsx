@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Github, Mail, MapPin, Code2 } from 'lucide-react'
+import { Code2, Github, Mail, MapPin } from 'lucide-react'
 import { Skeleton } from '@/components/ui/skeleton'
 import { Separator } from '@/components/ui/separator'
 

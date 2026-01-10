@@ -100,25 +100,22 @@ export function RxPower({ isLoading }: { isLoading: boolean }) {
           <div className="flex items-center gap-3 overflow-x-auto no-scrollbar">
             {isLoading
               ? Array.from({ length: 5 }).map((_, i) => (
-                <Skeleton
-                  key={i}
-                  className="w-10 h-5 rounded bg-zinc-800"
-                />
-              ))
+                  <Skeleton key={i} className="w-10 h-5 rounded bg-zinc-800" />
+                ))
               : (['dBm', 'dB', 'mW', 'µW', 'nW'] as const).map((u) => (
-                <button
-                  key={u}
-                  onClick={() => setUnit(u)}
-                  className={cn(
-                    'px-2 py-0.5 text-[11px] font-black uppercase border transition-all rounded',
-                    unit === u
-                      ? 'bg-slate-300 text-zinc-950 border-slate-300'
-                      : 'bg-transparent text-slate-400 border-zinc-800 hover:border-zinc-700',
-                  )}
-                >
-                  {u}
-                </button>
-              ))}
+                  <button
+                    key={u}
+                    onClick={() => setUnit(u)}
+                    className={cn(
+                      'px-2 py-0.5 text-[11px] font-black uppercase border transition-all rounded',
+                      unit === u
+                        ? 'bg-slate-300 text-zinc-950 border-slate-300'
+                        : 'bg-transparent text-slate-400 border-zinc-800 hover:border-zinc-700',
+                    )}
+                  >
+                    {u}
+                  </button>
+                ))}
           </div>
         </div>
       </CardHeaderComponent>
@@ -177,7 +174,7 @@ export function RxPower({ isLoading }: { isLoading: boolean }) {
                       {unit}
                     </span>
                   </div>
-                  <div className="h-[1px] w-48 bg-zinc-800" />
+                  <div className="h-px w-48 bg-zinc-800" />
 
                   <div className="grid grid-cols-2 gap-x-12 gap-y-2">
                     <div className="flex flex-col items-center">
